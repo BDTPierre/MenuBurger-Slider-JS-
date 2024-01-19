@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: rgb(139, 111, 75);
+}
+
+h3, a, a:visited {
+    color: rgb(72, 55, 33);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+}
+
+a:hover {
+    color: white;
+}
+
+/* NAVBAR */
+
+nav {
+    background-color: rgb(139, 111, 75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: calc(0.5em + 1.5vw); /* 0.5em = 8px, 1.5vw = 10px Le text est responsive*/
+}
+
+nav ul {    
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+#icons {
+    cursor: pointer;
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    #icons {
+        display: block;
+    }
+    #icons:before {
+        content: "\2630";
+    }
+    .active #icons:before {
+        content: "\2715";
+    }
+    nav ul {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: rgb(139, 111, 75);
+        width: 100%;
+        text-align: center;
+        transition: 0.25s;
+    }
+    nav li {
+        padding: 7px 0;
+    }
+    nav li:hover {
+        background-color: rgb(75, 60, 40);
+    }
+    nav.active ul {
+        left: 0;
+        top: 60px;
+    }
+}
+
+/* SLIDER */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.slider img {
+    border: 1px solid #ffffff38;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    max-width: 100%;
+    display: none;
+}
+
+img.active {
+    display: block;
+    animation: fade 0.8s;
+}
+
+/*** ANIMATIONS ***/
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cont-btn {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    border: none;
+}
+
+.btn-nav {
+    color: #ffffff;
+    font-size: 150px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.btn-nav:hover {
+    transition: all 0.5s ease-in-out;
+    color: #ffffff53;
+}
